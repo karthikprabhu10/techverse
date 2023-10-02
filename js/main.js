@@ -1,3 +1,5 @@
+export {backend_url, setLoading, offLoading };
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 (function ($) {
     "use strict";
 
