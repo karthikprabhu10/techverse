@@ -133,7 +133,9 @@ title: Become Member | Techverse
 
 
 <!-- JS -->
-<script>
+<script type="module">
+    import { backend_url, setLoading, offLoading } from './js/script.js';
+
     function handleEventRegSuccess(data) {
         document.getElementById('form_container').style.display = "none";
         document.getElementById('form_success').style.display = "block";

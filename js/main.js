@@ -1,18 +1,6 @@
-export {backend_url, setLoading, offLoading };
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 (function ($) {
     "use strict";
-
-    const backend_url = "https://thetechverse.pythonanywhere.com";
-
-    function setLoading(msg) {
-        document.getElementById('spinner').classList.add('show');
-        document.getElementById('loding_status').innerHTML = msg;
-    }
-    function offLoading() {
-        document.getElementById('spinner').classList.remove('show');
-        document.getElementById('loding_status').innerHTML = "Loading";
-    }
 
     // Spinner
     var spinner = function () {

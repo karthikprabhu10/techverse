@@ -237,7 +237,9 @@ title: Home | Techverse
 <!-- Features End -->
 
 <!-- JS -->
-<script>
+<script type="module">
+    import { backend_url, setLoading, offLoading } from './js/script.js';
+
     document.getElementById("nav-home").classList.add("active");
 
     window.onload = async () => {
