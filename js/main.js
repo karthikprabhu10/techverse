@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
 
-    const backend_url = "http://127.0.0.1:8000";
+    const backend_url = "https://thetechverse.pythonanywhere.com";
 
     function setLoading(msg) {
         document.getElementById('spinner').classList.add('show');
