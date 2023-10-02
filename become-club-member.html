@@ -1,0 +1,175 @@
+---
+layout: default
+title: Become Member | Techverse
+---
+
+<!-- include header -->
+{% include navbar.html %}
+
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">Become A Member</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="#">Become A Member</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="page">Registeration</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+
+
+
+<!-- Form Start -->
+<div class="container-xxl courses my-6 p-1">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-lg-8 my-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div id="form_container" class="bg-primary text-center p-5">
+                    <h1 class="mb-4">Register Now</h1>
+                    <form id="club_reg_form" method="post">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="name" class="form-control border-0" id="name"
+                                        placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" name="email" class="form-control border-0" id="email"
+                                        placeholder="email@example.com" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <!-- <input type="text"id="cname"
+                                            placeholder="Child Name"> -->
+
+                                    <select id="year" name="year" class="form-select border-0" required
+                                        style="padding-top: auto;">
+                                        <option value="" disabled selected hidden>Select Year</option>
+                                        <option value="FE">FE</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TE">TE</option>
+                                        <option value="BE">BE</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <select id="dept" name="dept" class="form-select border-0" required
+                                        style="padding-top: auto;">
+                                        <option value="" disabled selected hidden>Select Department</option>
+                                        <option value="Computer">Computer Dept</option>
+                                        <option value="Electronics & Telecommunication">Electronics &
+                                            Telecommunication Dept</option>
+                                        <option value="Mechanical">Mechanical Dept</option>
+                                        <option value="Automation & Robotics">Automation & Robotics Dept</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <!-- <input type="text"id="cname"
+                                            placeholder="Child Name"> -->
+
+                                    <select id="division" name="division" class="form-select border-0" required
+                                        style="padding-top: auto;">
+                                        <option value="" disabled selected hidden>Select Division</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" name="prn" class="form-control border-0" id="prn"
+                                        placeholder="F1234567" required>
+                                    <label for="prn">Your PRN</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-dark w-100 py-3" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h4 id="error_msg" class="p-2 text-white text-xxl-center"></h4>
+                </div>
+                <div id="form_success" style="display: none;" class="bg-primary text-center p-5">
+                    <div class="container-xxl py-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="container text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <i class="fa fa-check-circle display-1 text-success"></i>
+                                    <h2 class="mb-1">Registration Successful</h2>
+                                    <h3 class="mb-1">Congratulations You Are Now a Member Of TechVerse </h3>
+
+
+                                    <p class="mb-4">Thank you for registering for our club.For Future Events you
+                                        will receive updates via email.</p>
+                                    <a class="btn btn-primary py-3 px-5" href="/">Go Back To Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form End -->
+
+
+<!-- JS -->
+<script>
+    function handleEventRegSuccess(data) {
+        document.getElementById('form_container').style.display = "none";
+        document.getElementById('form_success').style.display = "block";
+    }
+
+    function handleEventRegError(error) {
+        if (error.status_code == 400) {
+            document.getElementById('error_msg').innerHTML = "Please Check Your Details And Try Again";
+            return;
+        } else if (error.status_code == 409) {
+            document.getElementById('error_msg').innerHTML = "You Are Already Registered";
+            return;
+        } else {
+            document.getElementById('error_msg').innerHTML = "Something Went Wrong Please Try Again Later";
+            return;
+        }
+    }
+
+    window.onload = function () {
+        offLoading();
+    }
+
+    document.getElementById('club_reg_form').addEventListener('submit', function (e) {
+        setLoading("Registering For Club");
+        e.preventDefault();
+        var url = backend_url + "/api/join_club";
+        var data = new FormData(e.target);
+
+        fetch(url, { method: 'POST', body: data })
+            .then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
+            .then(data => { handleEventRegSuccess(data); })
+            .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
+        offLoading();
+    });
+
+</script>
+
+<!-- include footer -->
+{% include footer.html %}

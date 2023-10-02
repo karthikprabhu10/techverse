@@ -1,0 +1,24 @@
+---
+layout: default
+title: Home | Techverse
+---
+
+<!-- include header -->
+{% include navbar.html %}
+
+<!-- content  -->
+
+
+<!-- JS -->
+<script>
+    document.getElementById("nav-home").classList.add("active");
+
+    window.onload = async () => {
+        // await setEvent(); 
+        offLoading();
+    };
+
+</script>
+
+<!-- include footer -->
+{% include footer.html %}

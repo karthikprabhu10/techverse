@@ -1,0 +1,170 @@
+---
+layout: default
+title: Past Event | Techverse
+---
+
+<!-- include header -->
+{% include navbar.html %}
+
+<!-- content  -->
+
+<!-- Features Start -->
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <h1 class="display-6 mb-4">Event Details</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 id="event_domain" class="text-primary text-uppercase mb-2">Event Domain</h6>
+                <h1 id="event_title" class="display-6 mb-4">Event Title Best Driving Training Agency In Your City
+                </h1>
+                <p id="event_desc" class="mb-5"> Description Tempor erat elitr rebum at clita. Diam dolor diam ipsum
+                    sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo
+                    justo magna dolore erat amet</p>
+                <div class="row gy-5 gx-4">
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-primary me-3">
+                                <i class="fa fa-calendar-times text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Date And Time</h5>
+                        </div>
+                        <span id="event_datetime">6th Oct 2023, 2:30 PM</span>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-primary me-3">
+                                <i class="fa fa-location-arrow text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Venue</h5>
+                        </div>
+                        <span id="event_venue">Room No 514, MESWCOE</span>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-primary me-3">
+                                <i class="fa fa-eye-dropper text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Total Seats</h5>
+                        </div>
+                        <span id="event_reg_limit">100</span>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-primary me-3">
+                                <i class="fa fa-arrow-up text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Number Of Registrations</h5>
+                        </div>
+                        <span id="event_reg_count">78</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="position-relative overflow-hidden pe-5 pt-5 h-100" style="min-height: 400px;">
+                    <img id="event_poster" class="position-absolute w-100 h-100" src="img/about-1.jpg" alt=""
+                        style="object-fit: cover;">
+                    <!-- <img class="position-absolute top-0 end-0 bg-white rounded ps-3 pb-3" src="img/logo.svg" alt="" style="width: 100px; height: 100px"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Features End -->
+
+
+
+<!-- event details -->
+<div class="container-xxl py-6 wow fadeInUp" data-wow-delay="0.1s"
+    style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+    <div class="container text-center ">
+        <div id="event_details"></div>
+    </div>
+</div>
+
+<!-- event details end -->
+
+<!-- JS -->
+<script>
+
+    function handleNoEvent() {
+        console.log("No Past Events Found");
+        // redirect to no-active-event.html
+        window.location.replace("/no-event-found.html");
+    }
+
+
+    function setEventDetails(event_details) {
+        document.getElementById('event_domain').innerHTML = event_details.domain;
+        document.getElementById('event_title').innerHTML = event_details.title;
+        document.getElementById('event_desc').innerHTML = event_details.description;
+        // convert event_details.event_date_time ie 2023-09-30T11:36:28+05:30 to 6th Oct 2023, 2:30 PM
+        var event_date_time = new Date(event_details.event_date_time);
+        var event_date_time_str = event_date_time.getDate() + " " + event_date_time.toLocaleString('default', { month: 'short' }) + " " + event_date_time.getFullYear() + ", " + event_date_time.toLocaleString('default', { hour: 'numeric', minute: 'numeric', hour12: true });
+        document.getElementById('event_datetime').innerHTML = event_date_time_str;
+        document.getElementById('event_venue').innerHTML = event_details.venue;
+        document.getElementById('event_reg_limit').innerHTML = event_details.reg_count_limit;
+        document.getElementById('event_reg_count').innerHTML = event_details.reg_count;
+        document.getElementById('event_poster').src = backend_url + event_details.event_poster;
+        document.getElementById('event_details').innerHTML = event_details.details;
+    }
+
+    async function getPastEvent() {
+        try {
+            const response = await fetch(backend_url + '/api/latest_past_event');
+            const data = await response.json();
+            console.log(data);
+            if (data.length < 1) {
+                return null;
+            } else {
+                return data;
+            }
+        } catch (error) {
+            handleNoEvent();
+        }
+    }
+
+    async function setEvent() {
+        setLoading("Getting Event Details");
+        var event_id = new URLSearchParams(window.location.search).get('event');
+        var event;
+        if (event_id != null) {
+            try {
+                const response = await fetch(backend_url + '/api/event/' + event_id);
+                const data = await response.json();
+
+                if (data.length < 1) {
+                    event = await getPastEvent();
+                } else {
+                    event = data;
+                }
+                if (event.is_reg_active == true) {
+                    window.location.replace("/active-event.html?event=" + event_id);
+                }
+                if (event != null) {
+                    setEventDetails(event);
+                } else {
+                    handleNoEvent();
+                }
+            } catch (error) {
+                handleNoEvent();
+            }
+        } else {
+            event = await getPastEvent();
+            if (event != null) {
+                setEventDetails(event);
+            } else {
+                handleNoEvent();
+            }
+        }
+    }
+    document.getElementById("nav-events").classList.add("active");
+
+    window.onload = async () => { await setEvent(); offLoading(); };
+
+</script>
+
+
+<!-- include footer -->
+{% include footer.html %}
