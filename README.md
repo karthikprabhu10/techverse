@@ -14,17 +14,29 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Git
-- A web browser
-- A text editor
-- A GitHub account
-- Jekyll
+To get started with this project, you will need the following:
+
+- [Git](https://git-scm.com/downloads) installed on your system
+- A web browser of your choice (No recommendation No Offense Chrome,Edge,Firefox,Opera,Brave,etc. any will do the job)
+- A text editor of your choice (we recommend [VS Code](https://code.visualstudio.com/))
+- A [GitHub account](https://github.com/join)
+- [Jekyll](https://jekyllrb.com/docs/installation/) installed on your system (for previewing the website locally)
 
 ### Installation
 
 1. Fork this repository to your own GitHub account.
 2. Clone the forked repository to your local machine.
-3. Open the folder and give your valuable contribution.
+
+## To Preview the Website Locally
+
+1. Make Sure you have Jekyll installed on your system. If not, follow the instructions [here at https://jekyllrb.com/docs/](https://jekyllrb.com/docs/).
+2. Open the folder in your terminal and run the following command:
+
+```bash
+bundle exec jekyll serve
+```
+
+3. Open your browser and go to `http://localhost:4000/` to preview the website.
 
 ## Contributing
 
