@@ -36,6 +36,10 @@ To get started with this project, you will need the following:
 bundle exec jekyll serve
 ```
 
+```bash
+bundle exec jekyll serve --livereload
+```
+
 3. Open your browser and go to `http://localhost:4000/` to preview the website.
 
 ## Contributing
