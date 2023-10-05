@@ -198,8 +198,13 @@
     background-size: cover;
 }
 
-.page-header-forms {
-    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/forms-header-bg.jpg) center center no-repeat;
+.page-header-contacts {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/contact-header-bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header-testimonials {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/testimonial-header-bg.jpg) center center no-repeat;
     background-size: cover;
 }
 
