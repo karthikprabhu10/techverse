@@ -24,4 +24,6 @@ exclude:
   - .gitmodules
   - CNAME
   - README.md
+  - extra-pages/
+  - With-JK/
 
