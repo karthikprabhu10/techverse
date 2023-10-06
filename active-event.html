@@ -164,7 +164,7 @@ title: Event Details | Techverse
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-dark w-100 py-3" type="submit">Submit</button>
+                                <button class="btn btn-dark w-100 py-3" id="form_submit_btn" type="submit">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -218,12 +218,14 @@ title: Event Details | Techverse
     }
 
     function handleEventRegSuccess(data) {
+        offLoading();
         document.getElementById('form_container').style.display = "none";
         document.getElementById('form_success').style.display = "block";
         document.getElementById('entry_code').innerHTML = data.entry_key;
     }
 
     function handleEventRegError(error) {
+        offLoading();
         var elmt = document.getElementById('error_msg');
         if (error.status_code === 400) {
             elmt.innerHTML = "Please Enter Valid Details";
@@ -312,7 +314,7 @@ title: Event Details | Techverse
             .then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
             .then(data => { console.log('Entry Key:', data.entry_key); handleEventRegSuccess(data); })
             .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
-        offLoading();
+        // offLoading();
     });
 
 </script>
