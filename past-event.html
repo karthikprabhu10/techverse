@@ -52,11 +52,9 @@ title: Past Event Details | Techverse
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 id="event_domain" class="text-primary text-uppercase mb-2">Event Domain</h6>
-                <h1 id="event_title" class="display-6 mb-4">Event Title Best Driving Training Agency In Your City
+                <h1 id="event_title" class="display-6 mb-4">Event Title
                 </h1>
-                <p id="event_desc" class="mb-5"> Description Tempor erat elitr rebum at clita. Diam dolor diam ipsum
-                    sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo
-                    justo magna dolore erat amet</p>
+                <p id="event_desc" class="mb-5"> Description </p>
                 <div class="row gy-5 gx-4">
                     <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="d-flex align-items-center mb-3">
@@ -98,7 +96,7 @@ title: Past Event Details | Techverse
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="position-relative overflow-hidden pe-5 pt-5 h-100" style="min-height: 400px;">
-                    <img id="event_poster" class="position-absolute w-100 h-100" src="img/about-1.jpg" alt=""
+                    <img id="event_poster" class="position-absolute w-100 h-100" src="img/public/email_header_bg.png" alt=""
                         style="object-fit: cover;">
                     <!-- <img class="position-absolute top-0 end-0 bg-white rounded ps-3 pb-3" src="img/logo.svg" alt="" style="width: 100px; height: 100px"> -->
                 </div>
@@ -145,13 +143,13 @@ title: Past Event Details | Techverse
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea type="text" name="feedback" class="form-control border-0" style="height: 150px;" id="feedback"
-                                        placeholder="feedback" required></textarea>
+                                    <textarea type="text" name="feedback" class="form-control border-0"
+                                        style="height: 150px;" id="feedback" placeholder="feedback" required></textarea>
                                     <label for="feedback">Feedback*</label>
                                 </div>
                             </div>
 
-                            
+
                             <div class="col-sm-6" style="margin-right: auto; margin-left: auto;">
                                 <div class="form-floating rating-input">
                                     <span style="color: white;">Rating </span>
@@ -182,7 +180,7 @@ title: Past Event Details | Techverse
                                 <div class="col-lg-6">
                                     <i class="fa fa-check-circle display-1 text-success"></i>
                                     <h2 class="mb-1">Successfully Submitted The Feedback</h2>
-                                    
+
                                     <p class="mb-4">Thank you for your <strong>Valuable Feedback </strong> on our event.
                                         We will try to improve our events based on your feedback.
                                     </p>
@@ -269,6 +267,7 @@ title: Past Event Details | Techverse
         document.getElementById('event_reg_count').innerHTML = event_details.reg_count;
         document.getElementById('event_poster').src = backend_url + event_details.event_poster;
         document.getElementById('event_details').innerHTML = event_details.details;
+        offLoading();
     }
 
     async function getPastEvent() {
@@ -322,7 +321,10 @@ title: Past Event Details | Techverse
     }
     document.getElementById("nav-events").classList.add("active");
 
-    window.onload = async () => { await setEvent(); offLoading(); };
+    window.onload = async () => {
+        await setEvent();
+        //  offLoading(); 
+    };
 
     function handleEventRegSuccess(data) {
         offLoading();
@@ -345,7 +347,7 @@ title: Past Event Details | Techverse
     }
 
 
-    
+
     document.getElementById('event_feedback_form').addEventListener('submit', function (e) {
         setLoading("Submitting The Form");
         e.preventDefault();
