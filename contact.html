@@ -1,0 +1,230 @@
+---
+layout: default
+title: Forms | Techverse
+---
+
+<!-- include header -->
+{% include navbar.html %}
+
+<!-- content  -->
+<!-- Page Header Start -->
+<div class="container-fluid page-header-contacts py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">Contact Us & Suggestions</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="#">Forms</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="page">Contact Us & Suggestions</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Contact Start -->
+<div class="container-xxl py-6">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px;">
+                <div class="position-relative h-100">
+                    <iframe class="position-relative w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.872948743793!2d73.87789907519199!3d18.53464268256171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0f855581855%3A0x9bfc35605df36ec5!2sModern%20Education%20Society&#39;s%20Wadia%20College%20of%20Engineering%20(MESWCOE)!5e0!3m2!1sen!2sin!4v1696508536880!5m2!1sen!2sin"
+                        frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <h6 class="text-primary text-uppercase mb-2">Contact Us</h6>
+                <h1 class="display-6 mb-4">Please do not hesitate to contact us. We are happy to assist you.</h1>
+                <p class="mb-4"> We welcome your <strong>sponsorship and collaboration opportunities</strong>. Please
+                    complete the form below to get in touch with us.</p>
+                <form id="contact_form" method="post">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-0 bg-light" id="name" name="name"
+                                    placeholder="Your Name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control border-0 bg-light" id="email" name="email"
+                                    placeholder="Your Email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control border-0 bg-light" id="mobile" name="mobile"
+                                    placeholder="Mobile Number">
+                                <label for="mobile">Mobile Number</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control border-0 bg-light" placeholder="Leave a message here"
+                                    name="message" id="message" style="height: 150px" required></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary py-3 px-5" id="submitbtn" type="submit">Send Message</button>
+                        </div>
+
+                        <!-- contact error msg -->
+                        <h4 id="contact_error_msg" class="p-2 text-white text-xxl-center"></h4>
+                    </div>
+                </form>
+
+                <div class="m-4 d-none" id="form_success">
+                    <div class="container text-center">
+                        <div class="row justify-content-center">
+                            <i class="fa fa-check-circle display-1 text-success"></i>
+                            <h2 class="mb-1">Form Submitted Successfully</h2>
+
+                            <p class="mb-4">Thank you for Submitting this Form. We will reach out to you shortly.</p>
+                            <a class="btn btn-primary py-3 px-5" href="/">Go Back To Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+<!-- <divclass="d-none"></div> -->
+<!-- Form Start -->
+<div id="suggestion" class="container-xxl courses my-6 p-1">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-lg-8 my-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div id="suggestion_form_container" class="bg-primary text-center p-5">
+                    <h1 class="mb-4">Want To Give Us Suggestions</h1>
+                    <h4>Secretly</h4>
+                    <form id="suggestion_form" method="post">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="name" class="form-control border-0" id="name" name="name"
+                                        placeholder="Your Name (Optional)">
+                                    <label for="name">Your Name (Optional)</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control border-0" name="suggestion" id="suggestion"
+                                        placeholder="Leave a message here" style="height: 150px" required></textarea>
+                                    <label for="suggestion">Suggestion / Message</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-dark w-100 py-3" id="form_submit_btn"
+                                    type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h4 id="error_msg" class="p-2 text-white text-xxl-center"></h4>
+                </div>
+                <div id="suggestion_msg" class="bg-primary text-center p-5 d-none">
+                    <div class="container-xxl py-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="container text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <i class="fa fa-check-circle display-1 text-success"></i>
+                                    <h2 class="mb-1">Form Submitted Secretly</h2>
+                                    <p class="mb-4">Thank you for sharing your valuable feedback with us!<br> We
+                                        appreciate your suggestions and we will definitely consider them for future
+                                        improvements.</p>
+                                    <a class="btn btn-primary py-3 px-5" href="/">Go Back To Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form End -->
+
+
+<!-- JS -->
+<script type="module">
+    import { backend_url, setLoading, offLoading } from './js/script.js';
+
+    document.getElementById("nav-forms").classList.add("active");
+
+    window.onload = async () => {
+        // await setEvent(); 
+        offLoading();
+    };
+
+    function handleFormSuccess() {
+        offLoading();
+        document.getElementById("contact_form").reset();
+        // alert("Your Message Submitted Successfully");
+        document.getElementById("contact_form").style.display = "none";
+        document.getElementById("form_success").classList.remove("d-none");
+    }
+
+    function handleFormError(error) {
+        offLoading();
+        document.getElementById("contact_error_msg").innerHTML = "Something Went Wrong Please Try Again Later";
+    }
+
+    function handleSuggestionSuccess() {
+        offLoading();
+        document.getElementById("suggestion_form").reset();
+        // alert("Your Message Submitted Successfully");
+        document.getElementById("suggestion_form_container").style.display = "none";
+        document.getElementById("suggestion_msg").classList.remove("d-none");
+    }
+
+    function handleSuggestionError(error) {
+        offLoading();
+        document.getElementById("error_msg").innerHTML = "Something Went Wrong Please Try Again Later";
+    }
+
+    document.getElementById('contact_form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        setLoading("Submitting Your Message");
+        var url = backend_url + "/api/contact_us";
+        var data = new FormData(e.target);
+
+        fetch(url, {
+            method: 'POST',
+            body: data
+        }).then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
+            .then(data => { console.log('Form Submitted'); handleFormSuccess(); })
+            .catch((error) => { console.error('Error:', error); console.error('data:', data); handleFormError(error); });
+
+        // offLoading();
+    });
+
+    document.getElementById('suggestion_form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        setLoading("Submitting Your Message");
+        var url = backend_url + "/api/submit_suggestion";
+        var data = new FormData(e.target);
+
+        fetch(url, {
+            method: 'POST',
+            body: data
+        }).then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
+            .then(data => { console.log('Form Submitted'); handleSuggestionSuccess(); })
+            .catch((error) => { console.error('Error:', error); console.error('data:', data); handleSuggestionError(error); });
+
+        // offLoading();
+    });
+
+
+</script>
+
+<!-- include footer -->
+{% include footer.html %}

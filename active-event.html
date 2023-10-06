@@ -1,12 +1,27 @@
 ---
 layout: default
-title: Event | Techverse
+title: Event Details | Techverse
 ---
 
 <!-- include header -->
 {% include navbar.html %}
 
 <!-- content  -->
+<!-- Page Header Start -->
+<div class="container-fluid page-header-events py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">Events</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/events.html">Events</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="page">Event Details</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
 
 <!-- Features Start -->
 <div class="container-xxl py-6">
@@ -149,7 +164,7 @@ title: Event | Techverse
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-dark w-100 py-3" type="submit">Submit</button>
+                                <button class="btn btn-dark w-100 py-3" id="form_submit_btn" type="submit">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -203,12 +218,14 @@ title: Event | Techverse
     }
 
     function handleEventRegSuccess(data) {
+        offLoading();
         document.getElementById('form_container').style.display = "none";
         document.getElementById('form_success').style.display = "block";
         document.getElementById('entry_code').innerHTML = data.entry_key;
     }
 
     function handleEventRegError(error) {
+        offLoading();
         var elmt = document.getElementById('error_msg');
         if (error.status_code === 400) {
             elmt.innerHTML = "Please Enter Valid Details";
@@ -297,7 +314,7 @@ title: Event | Techverse
             .then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
             .then(data => { console.log('Entry Key:', data.entry_key); handleEventRegSuccess(data); })
             .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
-        offLoading();
+        // offLoading();
     });
 
 </script>

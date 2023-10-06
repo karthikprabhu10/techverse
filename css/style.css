@@ -188,6 +188,32 @@
     background-size: cover;
 }
 
+.page-header-events {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/event-header-bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header-blogs {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/blog-header-bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header-contacts {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/contact-header-bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header-testimonials {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/testimonial-header-bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header-club-member {
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(../img/member-header-bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+
 .breadcrumb-item+.breadcrumb-item::before {
     color: #999999;
 }
