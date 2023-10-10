@@ -243,12 +243,17 @@ title: Blog | Techverse
     async function setBlogDetails() {
         var url = backend_url + "/api/blog/" + blog_ref_id;
 
-        var response = await fetch(url);
+        var response = await fetch(url).then(res => {
+            if (res.ok) {
+                return res;
+            } else {
+                window.location.href = "/blogs.html";
+            }
+        });
         var data = await response.json();
 
         var date = new Date(data.blog_date_time);
         date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
-
 
         document.getElementById("breadcrumb_blog_title").innerHTML = data.title;
         document.getElementById("main_domain").innerHTML = domain_list[data.domain];

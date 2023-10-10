@@ -317,7 +317,7 @@ title: Event Details | Techverse
             .then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
             .then(data => { console.log('Entry Key:', data.entry_key); handleEventRegSuccess(data); })
             .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
-        // offLoading();
+        offLoading();
     });
 
 </script>

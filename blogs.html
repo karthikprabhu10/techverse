@@ -358,13 +358,12 @@ title: Blogs | Techverse
 
 
     window.onload = async () => {
-        // await setEvent(); 
         setLoading("Loading Blogs");
         await setDomains();
         await getFeaturedBlogs();
         await getRecentBlogs();
         await getBlogs(sort_by, blog_start);
-
+        offLoading();
     };
 
 </script>
