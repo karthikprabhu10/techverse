@@ -1,0 +1,427 @@
+---
+layout: default
+title: Blog | Techverse
+---
+
+<head>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #f3bd00;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #cfa50e;
+            --bs-btn-hover-border-color: #cfa50e;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #c4a021;
+            --bs-btn-active-border-color: #c4a021;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/blog.css" rel="stylesheet">
+</head>
+
+<!-- include header -->
+{% include navbar.html %}
+
+<!-- content  -->
+<!-- Page Header Start -->
+<div class="container-fluid page-header-blogs py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">Blog</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="/blogs.html">Blogs</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="page" id="breadcrumb_blog_title">Blog</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<main class="container">
+
+    <div class="row g-5">
+        <div class="col-md-8">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                <span id="main_domain">Loading Domain</span>
+
+            </h3>
+            <h2 class="display-5 link-body-emphasis mb-1" id="main_blog_title">Loading blog title</h2>
+            <p class="blog-post-meta">
+                <span id="main_date">January 1, 2021 </span> by <a id="main_author">TechVerse</a>
+            </p>
+            <p class="blog-post-meta">
+                <span id="main_views">100 </span> Views <span class="mx-1">&bullet;</span> <span id="main_likes">100
+                </span> Likes
+            </p>
+            <hr>
+
+            <div class="ck ck-content" id="main_blog_content">
+                Loading Blog Content
+            </div>
+
+            <div class="text-center py-4">
+                <div class="custom-pagination">
+                    <a class="btn btn-primary" id="like_blog_btn"><i class="fa fa-heart"></i> Like Blog</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="p-4 mb-3 bg-body-tertiary rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0" id="main_about_blog">Loading.</p>
+                </div>
+
+                <div>
+                    <h4 class="fst-italic">Recent posts</h4>
+                    <ul class="list-unstyled" id="list_of_recent_posts">
+
+                        <li>
+                            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                href="#">
+                                <svg class="bd-placeholder-img" width="100%" height="96"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <rect width="100%" height="100%" fill="#777" />
+                                </svg>
+                                <div class="col-lg-8">
+                                    <h6 class="mb-0">This is another blog post title</h6>
+                                    <small class="text-body-secondary">January 14, 2023</small>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="p-4">
+                    <h4 class="fst-italic">Domains</h4>
+                    <ol class="list-unstyled" id="domain_links">
+                        <li><a href="#">Loading</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- longer featured -->
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" id="long_featured">
+        <div class="col-lg-6 px-0">
+            <h1 class="display-4 fst-italic" id="featured_title">Loading featured blog post</h1>
+            <p class="lead my-3" id="featured_about">Loading.</p>
+            <p class="lead mb-0"><a href="#" id="featured_link" class="text-body-emphasis fw-bold">Continue
+                    reading...</a></p>
+        </div>
+    </div>
+
+    <!-- related posts -->
+    <div class="row mb-2" id="related_posts">
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
+                    <h3 class="mb-0">Featured post</h3>
+                    <div class="mb-1 text-body-secondary">Nov 12</div>
+                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
+                        lead-in to additional content.</p>
+                    <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                        Continue reading
+                        <svg class="bi">
+                            <use xlink:href="#chevron-right" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                        focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                            dy=".3em">Thumbnail</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<!-- JS -->
+<script type="module">
+    import { backend_url, setLoading, offLoading } from './js/script.js';
+
+    document.getElementById("nav-blogs").classList.add("active");
+
+    var searchParams = new URLSearchParams(window.location.search);
+    var blog_ref_id = searchParams.get('blog');
+
+    if (blog_ref_id == null) {
+        window.location.href = "/blogs.html";
+    }
+
+    var domain_list;
+
+    async function setBlogDetails() {
+        var url = backend_url + "/api/blog/" + blog_ref_id;
+
+        var response = await fetch(url).then(res => {
+            if (res.ok) {
+                return res;
+            } else {
+                window.location.href = "/blogs.html";
+            }
+        });
+        var data = await response.json();
+
+        var date = new Date(data.blog_date_time);
+        date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
+
+        document.getElementById("breadcrumb_blog_title").innerHTML = data.title;
+        document.getElementById("main_domain").innerHTML = domain_list[data.domain];
+        document.getElementById("main_blog_title").innerHTML = data.title;
+        document.getElementById("main_views").innerHTML = data.blog_views;
+        document.getElementById("main_likes").innerHTML = data.blog_likes;
+        document.getElementById("main_date").innerHTML = date;
+        document.getElementById("main_author").innerHTML = data.author_name;
+        document.getElementById("main_blog_content").innerHTML = data.content;
+        document.getElementById("main_about_blog").innerHTML = data.description;
+    }
+
+    async function setDomains() {
+        domain_list = await fetch(backend_url + "/api/blog_domains").then(res => res.json());
+
+        var domain_links = document.getElementById("domain_links");
+        domain_links.innerHTML = "";
+        for (const [key, value] of Object.entries(domain_list)) {
+            var item = document.createElement('li');
+            item.innerHTML = `<a href="/blogs.html?domain=${key}">${value}</a>`;
+            domain_links.appendChild(item);
+        }
+    }
+
+    async function getFeaturedBlogs() {
+        var url = backend_url + "/api/featured_blogs";
+
+        var response = await fetch(url);
+        var data = await response.json();
+
+        var long_featured_blog = document.getElementById("long_featured");
+        var featured_blogs = document.getElementById("related_posts");
+        long_featured_blog.innerHTML = "";
+        featured_blogs.innerHTML = "";
+
+        if (data.length == 0) {
+            long_featured_blog.innerHTML = "<h1 class='text-center'>No Featured Blogs</h1>";
+            featured_blogs.remove();
+            return;
+        } else {
+            var blog = data[0];
+            var date = new Date(blog.blog_date_time);
+            date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
+
+            long_featured_blog.style = `    background: linear-gradient(rgb(255 255 255 / 75%), rgb(255 255 255 / 75%)), url('${backend_url + blog.blog_poster}') center center no-repeat;
+    background-size: cover;`;
+
+            long_featured_blog.innerHTML = `
+            <div class="col-lg-6 px-0">
+                <h1 class="display-4 fst-italic">${blog.title}</h1>
+                <p class="lead my-3">${blog.description}</p>
+                <p class="lead mb-0"><a href="/blog.html?blog=${blog.ref_id}" class="text-body-emphasis fw-bold">Continue
+                        reading...</a></p>
+            </div>
+            `;
+        }
+
+        data = data.slice(1);
+
+        if (data.length == 0) {
+            featured_blogs.remove();
+            return;
+        } else {
+
+            data.forEach(function (blog) {
+                // Create a new div
+
+                var newDiv = document.createElement('div');
+                newDiv.className = 'col-md-6';
+
+                var date = new Date(blog.blog_date_time);
+                date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
+
+                // Add the HTML with the event data
+                newDiv.innerHTML = `
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">${domain_list[blog.domain]}</strong>
+                        <h3 class="mb-0">${blog.title}</h3>
+                        <div class="mb-1 text-body-secondary">${date}</div>
+                        <p class="card-text mb-auto">${blog.description}</p>
+                        <a href="/blog.html?blog=${blog.ref_id}" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Continue reading
+                            <svg class="bi">
+                                <use xlink:href="#chevron-right" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img class="bd-placeholder-img" width="200" height="250" src="${backend_url + blog.blog_poster}" />
+                    </div>
+                </div>
+                `;
+                // Append the new div to the container
+                featured_blogs.appendChild(newDiv);
+            });
+        }
+
+    }
+
+    async function getRecentBlogs() {
+        var url = backend_url + "/api/recent_blogs";
+
+        var response = await fetch(url);
+        var data = await response.json();
+
+
+        var recent_blogs = document.getElementById("list_of_recent_posts");
+        recent_blogs.innerHTML = "";
+
+        if (data.length == 0) {
+            recent_blogs.innerHTML = "<h1 class='text-center'>No Recent Blogs</h1>";
+            return;
+        } else {
+            data.forEach(function (blog) {
+                var item = document.createElement('li');
+                item.className = 'd-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top';
+                item.dataset.wowDelay = '0.1s';
+
+                var date = new Date(blog.blog_date_time);
+                date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
+
+                // Add the HTML with the event data
+                item.innerHTML = `
+                <img class="bd-placeholder-img" width="100%" height="96" src="${backend_url + blog.blog_poster}" />
+                                
+                                <div class="col-lg-8">
+                                    <h6 class="mb-0"><a href="/blog.html?blog=${blog.ref_id}" class="title_link">${blog.title}</a></h6>
+                                    <p><small class="text-body-secondary">By ${blog.author_name}</small></p>
+                                    <small class="text-body-secondary">${date}</small>
+                                </div>
+                `;
+
+                // Append the new div to the container
+                recent_blogs.appendChild(item);
+            });
+        }
+
+    }
+
+    document.getElementById("like_blog_btn").addEventListener('click', async () => {
+        var url = backend_url + "/api/like_blog/" + blog_ref_id;
+        // send post request
+        var response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }).then(res => {
+            if (res.ok) {
+                document.getElementById("like_blog_btn").innerHTML = "<i class='fa fa-heart'></i> Liked";
+            } else {
+                document.getElementById("like_blog_btn").innerHTML = "<i class='fa fa-heart'></i> Like Blog";
+            }
+        });
+    });
+
+    window.onload = async () => {
+        setLoading("Loading Blogs");
+        await setDomains();
+        await setBlogDetails();
+        await getRecentBlogs();
+        await getFeaturedBlogs();
+        offLoading();
+    };
+
+
+</script>
+
+<!-- include footer -->
+{% include footer.html %}

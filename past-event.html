@@ -5,6 +5,9 @@ title: Past Event Details | Techverse
 
 <!-- include header -->
 {% include navbar.html %}
+
+<link rel="stylesheet" href="css/ckstyle.css">
+<script src="js/bundle.js"></script>
 <style>
     .rating-input {
         display: flex;
@@ -200,9 +203,9 @@ title: Past Event Details | Techverse
 
 <!-- event details -->
 <div class="container-xxl py-6 wow fadeInUp" data-wow-delay="0.1s"
-    style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-    <div class="container text-center ">
-        <div id="event_details"></div>
+    style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;overflow: hidden;">
+    <div class="container ">
+        <div id="event_details" class="ck ck-content"></div>
     </div>
 </div>
 
