@@ -1,6 +1,58 @@
+<!-- Topbar Start -->
+<div class="container-fluid bg-dark text-light p-0">
+    <div class="row gx-0 d-none d-lg-flex">
+        <div class="col-lg-7 px-5 text-start">
+            <div class="h-100 d-inline-flex align-items-center me-4" style="width: 100%;">
+                <marquee behavior="" direction="" id="update-marquee">
+                    <span class="badge bg-secondary">New</span>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</small>
+                </marquee>
+            </div>
+        </div>
+        <div class="col-lg-5 px-5 text-end">
+            <div class="h-100 d-inline-flex align-items-center me-4">
+                <small class="fa fa-mail-bulk text-primary me-2"></small>
+                <small><a href="mailto:techverse.mescoe@gmail.com"> Mail Us</a></small>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center me-4">
+                <small class="fab fa-whatsapp text-primary me-2"></small>
+                <small><a href="https://chat.whatsapp.com/K3o9i4A8dEYB9qLrFKgdb4">Join Whatsapp Group</a></small>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center mx-n2">
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-start border-secondary"
+                    href="https://www.linkedin.com/company/techverse-mescoe/"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
+                    href="https://www.instagram.com/techverse_mescoe"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
+                    href="https://twitter.com/TechVerseMESCOE"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
+                    href="https://github.com/techverse-meswcoe"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<script>
+    fetch('data/updates.txt')
+    .then(response => response.text())
+    .then(data => {
+        // 'data' contains the content of 'updates.txt'
+        data = data.split('\n');
+        var elmt = '';
+        data.forEach(update => {
+            elmt += `<span class="badge bg-secondary">New</span>
+                    <small style="margin-right:10px;">${update}</small>`;
+        });
+        document.getElementById('update-marquee').innerHTML = elmt;
+    });
+
+</script>
+
+
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-    <a href="/" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+    <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0"><img class="img-fluid w-100" src="img/logo-nav-dark.svg" alt="TechVerse" /></h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
