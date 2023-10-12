@@ -56,7 +56,7 @@ title: Events | Techverse
 
 
 <script type="module">
-    import { backend_url, setLoading, offLoading } from './js/script.js';
+    import { backend_url, setLoading, offLoading } from '/js/script.js';
 
     async function getActiveEvents() {
         var url = backend_url + "/api/active_events";
@@ -93,14 +93,14 @@ title: Events | Techverse
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="${backend_url + event.event_poster}" alt="">
                             <div class="courses-overlay">
-                                <a class="btn btn-outline-primary border-2" href="/active-event.html?event=${event.ref_id}">Register Now</a>
+                                <a class="btn btn-outline-primary border-2" href="/events/active/event.html?event=${event.ref_id}">Register Now</a>
                             </div>
                         </div>
                     </div>`;
 
                 // on click on new div redirect to event page
                 newDiv.onclick = function () {
-                    window.location.href = "/active-event.html?event=" + event.ref_id;
+                    window.location.href = "/events/active/event.html?event=" + event.ref_id;
                 };
 
 
@@ -146,14 +146,14 @@ title: Events | Techverse
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="${backend_url + event.event_poster}" alt="">
                             <div class="courses-overlay">
-                                <a class="btn btn-outline-primary border-2" href="/past-event.html?event=${event.ref_id}">See Details</a>
+                                <a class="btn btn-outline-primary border-2" href="/events/past/event.html?event=${event.ref_id}">See Details</a>
                             </div>
                         </div>
                     </div>`;
 
                 // on click on new div redirect to event page
                 newDiv.onclick = function () {
-                    window.location.href = "/past-event.html?event=" + event.ref_id;
+                    window.location.href = "/events/past/event.html?event=" + event.ref_id;
                 };
 
 

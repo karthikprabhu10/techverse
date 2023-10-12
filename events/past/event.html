@@ -1,13 +1,35 @@
 ---
 layout: default
-title: Event Details | Techverse
+title: Past Event Details | Techverse
 ---
 
 <!-- include header -->
 {% include navbar.html %}
 
-<link rel="stylesheet" href="css/ckstyle.css">
-<script src="js/bundle.js"></script>
+<link rel="stylesheet" href="/css/ckstyle.css">
+<script src="/js/bundle.js"></script>
+<style>
+    .rating-input {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .rating-input input {
+        width: 100%;
+        text-align: center;
+    }
+
+    .rating-input .star {
+        cursor: pointer;
+        font-size: 24px;
+        color: rgba(133, 133, 133, 0.5);
+    }
+
+    .rating-input .star.filled {
+        color: rgb(255, 255, 255);
+    }
+</style>
 <!-- content  -->
 <!-- Page Header Start -->
 <div class="container-fluid page-header-events py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
@@ -17,13 +39,12 @@ title: Event Details | Techverse
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
                 <li class="breadcrumb-item"><a class="text-white" href="/events.html">Events</a></li>
-                <li class="breadcrumb-item text-primary active" aria-current="page">Event Details</li>
+                <li class="breadcrumb-item text-primary active" aria-current="page">Past Event Details</li>
             </ol>
         </nav>
     </div>
 </div>
 <!-- Page Header End -->
-
 
 <!-- Features Start -->
 <div class="container-xxl py-6">
@@ -34,11 +55,9 @@ title: Event Details | Techverse
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 id="event_domain" class="text-primary text-uppercase mb-2">Event Domain</h6>
-                <h1 id="event_title" class="display-6 mb-4">Event Title Best Driving Training Agency In Your City
+                <h1 id="event_title" class="display-6 mb-4">Event Title
                 </h1>
-                <p id="event_desc" class="mb-5"> Description Tempor erat elitr rebum at clita. Diam dolor diam ipsum
-                    sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo
-                    justo magna dolore erat amet</p>
+                <p id="event_desc" class="mb-5"> Description </p>
                 <div class="row gy-5 gx-4">
                     <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="d-flex align-items-center mb-3">
@@ -80,7 +99,7 @@ title: Event Details | Techverse
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="position-relative overflow-hidden pe-5 pt-5 h-100" style="min-height: 400px;">
-                    <img id="event_poster" class="position-absolute w-100 h-100" src="img/about-1.jpg" alt=""
+                    <img id="event_poster" class="position-absolute w-100 h-100" src="/img/public/email_header_bg.png" alt=""
                         style="object-fit: cover;">
                     <!-- <img class="position-absolute top-0 end-0 bg-white rounded ps-3 pb-3" src="img/logo.svg" alt="" style="width: 100px; height: 100px"> -->
                 </div>
@@ -91,82 +110,67 @@ title: Event Details | Techverse
 <!-- Features End -->
 
 <!-- Form Start -->
-<div class="container-xxl courses my-6 p-1">
+<div id="feedbackForm" class="container-xxl courses my-6 p-1">
     <div class="container">
         <div class="row g-4 justify-content-center">
 
             <div class="col-lg-8 my-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div id="form_container" class="bg-primary text-center p-5">
-                    <h1 class="mb-4">Register Now</h1>
-                    <form id="event_reg_form" method="post">
+                    <h1 class="mb-4">Give Us Your Valuable Feedback!</h1>
+                    <form id="event_feedback_form" method="post">
                         <input type="text" id="event_id" name="event" placeholder="event" value="1" hidden required>
 
                         <div class="row g-3">
-                            <div class="col-12">
+                            <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="text" name="name" class="form-control border-0" id="name"
                                         placeholder="Your Name" required>
-                                    <label for="name">Your Name</label>
+                                    <label for="name">Your Name*</label>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="email" name="email" class="form-control border-0" id="email"
-                                        placeholder="email@example.com" required>
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <!-- <input type="text"id="cname"
-                                            placeholder="Child Name"> -->
 
-                                    <select id="year" name="year" class="form-select border-0" required
-                                        style="padding-top: auto;">
-                                        <option value="" disabled selected hidden>Select Year</option>
-                                        <option value="FE">FE</option>
-                                        <option value="SE">SE</option>
-                                        <option value="TE">TE</option>
-                                        <option value="BE">BE</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <select id="dept" name="dept" class="form-select border-0" required
-                                        style="padding-top: auto;">
-                                        <option value="" disabled selected hidden>Select Department</option>
-                                        <option value="Computer">Computer Dept</option>
-                                        <option value="Electronics & Telecommunication">Electronics &
-                                            Telecommunication Dept</option>
-                                        <option value="Mechanical">Mechanical Dept</option>
-                                        <option value="Automation & Robotics">Automation & Robotics Dept</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <!-- <input type="text"id="cname"
-                                            placeholder="Child Name"> -->
-
-                                    <select id="division" name="division" class="form-select border-0" required
-                                        style="padding-top: auto;">
-                                        <option value="" disabled selected hidden>Select Division</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
-                            </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="text" name="prn" class="form-control border-0" id="prn"
                                         placeholder="F1234567" required>
-                                    <label for="prn">Your PRN</label>
+                                    <label for="prn">Your PRN*</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" name="email" class="form-control border-0" id="email"
+                                        placeholder="email@example.com" required>
+                                    <label for="email">Your Email*</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-dark w-100 py-3" id="form_submit_btn" type="submit">Submit</button>
+                                <div class="form-floating">
+                                    <textarea type="text" name="feedback" class="form-control border-0"
+                                        style="height: 150px;" id="feedback" placeholder="feedback" required></textarea>
+                                    <label for="feedback">Feedback*</label>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-6" style="margin-right: auto; margin-left: auto;">
+                                <div class="form-floating rating-input">
+                                    <span style="color: white;">Rating </span>
+                                    <input type="text" id="rating" name="rating" class="form-range border-0" min="1"
+                                        max="5" step="1" value="3" hidden>
+                                    <span class="star" id="star1"><i class="fa fa-star"></i></span>
+                                    <span class="star" id="star2"><i class="fa fa-star"></i></span>
+                                    <span class="star" id="star3"><i class="fa fa-star"></i></span>
+                                    <span class="star" id="star4"><i class="fa fa-star"></i></span>
+                                    <span class="star" id="star5"><i class="fa fa-star"></i></span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-12">
+                                <button class="btn btn-dark w-100 py-3" id="form_submit_btn"
+                                    type="submit">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -178,13 +182,12 @@ title: Event Details | Techverse
                             <div class="row justify-content-center">
                                 <div class="col-lg-12">
                                     <i class="fa fa-check-circle display-1 text-success"></i>
-                                    <h2 class="mb-1">Registration Successful</h2>
-                                    <h2 class="mb-4">Your Entry Code is "<span id="entry_code"></span>"</h2>
-                                    <p class="mb-4 text-white">Thank you for registering for our event. You will receive a
-                                        registration email shortly. <strong>Please keep the Entry Code with you
-                                            when you come to the event. </strong>The code will also be sent to
-                                        you via email.</p>
-                                    <a class="btn btn-primary py-3 px-5" href="/">Go Back To Home</a>
+                                    <h2 class="mb-1">Successfully Submitted The Feedback</h2>
+
+                                    <p class="mb-4 text-white">Thank you for your <strong>Valuable Feedback </strong> on our event.
+                                        We will try to improve our events based on your feedback.
+                                    </p>
+                                    <a class="btn btn-primary py-3 px-5" href="/events.html">Go Back To Events</a>
                                 </div>
                             </div>
                         </div>
@@ -206,40 +209,52 @@ title: Event Details | Techverse
     </div>
 </div>
 
-
 <!-- event details end -->
-
 
 <!-- JS -->
 <script type="module">
-    import { backend_url, setLoading, offLoading } from './js/script.js';
+    const ratingInput = document.querySelector('#rating');
+    const stars = document.querySelectorAll('.rating-input .star');
 
-    function handleNoEvent() {
-        console.log("No Active Events Found");
-        // redirect to no-active-event.html
-        window.location.replace("/no-event-found.html");
-    }
+    function setStars(value) {
+        // console.log(value);
+        ratingInput.value = value;
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].classList.remove('filled');
+        }
 
-    function handleEventRegSuccess(data) {
-        offLoading();
-        document.getElementById('form_container').style.display = "none";
-        document.getElementById('form_success').style.display = "block";
-        document.getElementById('entry_code').innerHTML = data.entry_key;
-    }
-
-    function handleEventRegError(error) {
-        offLoading();
-        var elmt = document.getElementById('error_msg');
-        if (error.status_code === 400) {
-            elmt.innerHTML = "Please Enter Valid Details";
-        } else if (error.status_code === 406) {
-            elmt.innerHTML = "Sorry, Event Registrations Are Closed";
-        } else if (error.status_code === 409) {
-            elmt.innerHTML = "Email ID is Already Registered";
-        } else {
-            elmt.innerHTML = "Something Went Wrong";
+        for (let i = 0; i < value; i++) {
+            stars[i].classList.add('filled');
         }
     }
+
+    document.getElementById('star1').addEventListener('click', () => {
+        setStars(1);
+    });
+    document.getElementById('star2').addEventListener('click', () => {
+        setStars(2);
+    });
+    document.getElementById('star3').addEventListener('click', () => {
+        setStars(3);
+    });
+    document.getElementById('star4').addEventListener('click', () => {
+        setStars(4);
+    });
+    document.getElementById('star5').addEventListener('click', () => {
+        setStars(5);
+    });
+
+    setStars(3);
+
+    import { backend_url, setLoading, offLoading } from '/js/script.js';
+
+
+    function handleNoEvent() {
+        console.log("No Past Events Found");
+        // redirect to no-active-event.html
+        window.location.replace("/events/no-event-found.html");
+    }
+
 
     function setEventDetails(event_details) {
         document.getElementById('event_id').value = event_details.ref_id;
@@ -255,11 +270,12 @@ title: Event Details | Techverse
         document.getElementById('event_reg_count').innerHTML = event_details.reg_count;
         document.getElementById('event_poster').src = backend_url + event_details.event_poster;
         document.getElementById('event_details').innerHTML = event_details.details;
+        offLoading();
     }
 
-    async function getActiveEvent() {
+    async function getPastEvent() {
         try {
-            const response = await fetch(backend_url + '/api/earliest_active_event');
+            const response = await fetch(backend_url + '/api/latest_past_event');
             const data = await response.json();
             console.log(data);
             if (data.length < 1) {
@@ -282,9 +298,12 @@ title: Event Details | Techverse
                 const data = await response.json();
 
                 if (data.length < 1) {
-                    event = await getActiveEvent();
+                    event = await getPastEvent();
                 } else {
                     event = data;
+                }
+                if (event.is_reg_active == true) {
+                    window.location.replace("/events/active/event.html?event=" + event_id);
                 }
                 if (event != null) {
                     setEventDetails(event);
@@ -295,7 +314,7 @@ title: Event Details | Techverse
                 handleNoEvent();
             }
         } else {
-            event = await getActiveEvent();
+            event = await getPastEvent();
             if (event != null) {
                 setEventDetails(event);
             } else {
@@ -305,21 +324,48 @@ title: Event Details | Techverse
     }
     document.getElementById("nav-events").classList.add("active");
 
-    window.onload = async () => { await setEvent(); offLoading(); };
+    window.onload = async () => {
+        await setEvent();
+        //  offLoading(); 
+    };
 
-    document.getElementById('event_reg_form').addEventListener('submit', function (e) {
-        setLoading("Registering For Event");
+    function handleEventRegSuccess(data) {
+        offLoading();
+        document.getElementById('form_container').style.display = "none";
+        document.getElementById('form_success').style.display = "block";
+    }
+
+    function handleEventRegError(error) {
+        offLoading();
+        var elmt = document.getElementById('error_msg');
+        if (error.status_code === 400) {
+            elmt.innerHTML = "Please Enter Valid Details";
+        } else if (error.status_code === 406) {
+            elmt.innerHTML = "Sorry, Event Feedbacks Are Closed";
+        } else if (error.status_code === 409) {
+            elmt.innerHTML = "We Already Have Feedback From This Email ID";
+        } else {
+            elmt.innerHTML = "Something Went Wrong";
+        }
+    }
+
+
+
+    document.getElementById('event_feedback_form').addEventListener('submit', function (e) {
+        setLoading("Submitting The Form");
         e.preventDefault();
-        var url = backend_url + "/api/register_for_event";
+        var url = backend_url + "/api/event_feedback";
         var data = new FormData(e.target);
 
         fetch(url, { method: 'POST', body: data })
             .then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
-            .then(data => { console.log('Entry Key:', data.entry_key); handleEventRegSuccess(data); })
+            .then(data => { handleEventRegSuccess(data); })
             .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
-        offLoading();
+        // offLoading();
     });
 
 </script>
+
+
 <!-- include footer -->
 {% include footer.html %}
