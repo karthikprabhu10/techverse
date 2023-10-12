@@ -34,7 +34,7 @@
 <!-- Topbar End -->
 
 <script>
-    fetch('data/updates.txt')
+    fetch('/data/updates.txt')
     .then(response => response.text())
     .then(data => {
         // 'data' contains the content of 'updates.txt'
@@ -53,7 +53,7 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
     <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-        <h2 class="m-0"><img class="img-fluid w-100" src="img/logo-nav-dark.svg" alt="TechVerse" /></h2>
+        <h2 class="m-0"><img class="img-fluid w-100" src="/img/logo-nav-dark.svg" alt="TechVerse" /></h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -66,16 +66,16 @@
             <a id="nav-blogs" href="/blogs.html" class="nav-item nav-link">Blogs</a>
 
             <div class="nav-item dropdown">
-                <a id="nav-forms" href="/contact.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Forms</a>
+                <a id="nav-forms" href="/forms" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Forms</a>
                 <div class="dropdown-menu bg-light m-0">
-                    <a href="/contact.html#contactForm" class="dropdown-item">Contact Us</a>
-                    <a href="/contact.html#suggestion" class="dropdown-item">Secret Suggestion</a>
-                    <a href="/testimonial.html#testimonialForm" class="dropdown-item">Give Testimonial</a>
-                    <a href="/become-club-member.html" class="dropdown-item">Become Club Member</a>
+                    <a href="/forms/contact.html#contactForm" class="dropdown-item">Contact Us</a>
+                    <a href="/forms/contact.html#suggestion" class="dropdown-item">Secret Suggestion</a>
+                    <a href="/forms/testimonial.html#testimonialForm" class="dropdown-item">Give Testimonial</a>
+                    <a href="/forms/become-club-member.html" class="dropdown-item">Become Club Member</a>
                 </div>
             </div>
         </div>
-        <a href="/become-club-member.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Become Member Now<i
+        <a href="/forms/become-club-member.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Become Member Now<i
                 class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>
