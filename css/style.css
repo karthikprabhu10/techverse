@@ -6,6 +6,29 @@
     --dark: #0C2B4B;
 }
 
+@keyframes loading-sk {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.loading-skeleton {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(325deg, #65656550 20%, #a1a1a1 50%, #65656550 100%);
+    background-size: 200% 100%;
+    animation: loading-sk 1s infinite;
+
+    /* Additional Styling */
+    border-radius: 10px;
+    display: block;
+    color: transparent;
+}
+
 .py-6 {
     padding-top: 6rem;
     padding-bottom: 6rem;
