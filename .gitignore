@@ -1,9 +1,7 @@
 .vscode
 default.html
-
 # jekyll
 _site/
 .sass-cache/
-
 # gemfiles
 .bundle/

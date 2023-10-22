@@ -1,15 +1,11 @@
 ---
 layout: default
+description: Techverse is a technical club in Pune. We are a group of tech enthusiasts who are passionate about technology and its applications.
 title: Events | Techverse
 ---
-
 <!-- include header -->
 {% include navbar.html %}
-
 <!-- content  -->
-
-
-
 <!-- Page Header Start -->
 <div class="container-fluid page-header-events py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center">
@@ -24,8 +20,6 @@ title: Events | Techverse
     </div>
 </div>
 <!-- Page Header End -->
-
-
 <!-- Courses Start -->
 <div class="container-xxl py-6">
     <div class="container">
@@ -97,7 +91,6 @@ title: Events | Techverse
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -173,37 +166,28 @@ title: Events | Techverse
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 <!-- Courses End -->
-
-
 <script type="module">
     import { backend_url, setLoading, offLoading } from '/js/script.js';
-
     async function getActiveEvents() {
         var url = backend_url + "/api/active_events";
-
         var response = await fetch(url);
         var data = await response.json();
-
         var upcoming_events = document.getElementById("upcoming_events");
         upcoming_events.innerHTML = "";
-
         // console.log(data);
         if (data.length == 0) {
             upcoming_events.innerHTML = "<h1 class='text-center'>No Upcoming Events</h1>";
             return;
         } else {
-
             data.forEach(function (event) {
                 // Create a new div
                 var newDiv = document.createElement('div');
                 newDiv.className = 'col-lg-4 col-md-6 wow fadeInUp';
                 newDiv.dataset.wowDelay = '0.1s';
-
                 // Add the HTML with the event data
                 newDiv.innerHTML = `
                     <div class="courses-item d-flex flex-column bg-light overflow-hidden h-100">
@@ -217,47 +201,37 @@ title: Events | Techverse
                             </ol>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="${backend_url + event.event_poster}" alt="">
+                            <img class="img-fluid" src="${backend_url + event.event_poster}" alt="Event Poster">
                             <div class="courses-overlay">
                                 <a class="btn btn-outline-primary border-2" href="/events/active/event.html?event=${event.ref_id}">Register Now</a>
                             </div>
                         </div>
                     </div>`;
-
                 // on click on new div redirect to event page
                 newDiv.onclick = function () {
                     window.location.href = "/events/active/event.html?event=" + event.ref_id;
                 };
-
-
                 // Append the new div to the container
                 upcoming_events.appendChild(newDiv);
             });
         }
-
     }
-
     async function getPastEvents() {
         var url = backend_url + "/api/past_events";
-
         var response = await fetch(url);
         var data = await response.json();
-
         var past_events = document.getElementById("past_events");
         past_events.innerHTML = "";
-
         // console.log(data);
         if (data.length == 0) {
             past_events.innerHTML = "<h1 class='text-center'>No Past Events</h1>";
             return;
         } else {
-
             data.forEach(function (event) {
                 // Create a new div
                 var newDiv = document.createElement('div');
                 newDiv.className = 'col-lg-4 col-md-6 wow fadeInUp';
                 newDiv.dataset.wowDelay = '0.1s';
-
                 // Add the HTML with the event data
                 newDiv.innerHTML = `
                     <div class="courses-item d-flex flex-column bg-light overflow-hidden h-100">
@@ -271,36 +245,27 @@ title: Events | Techverse
                             </ol>
                         </div>
                         <div class="position-relative mt-auto">
-                            <img class="img-fluid" src="${backend_url + event.event_poster}" alt="">
+                            <img class="img-fluid" src="${backend_url + event.event_poster}" alt="Event Poster">
                             <div class="courses-overlay">
                                 <a class="btn btn-outline-primary border-2" href="/events/past/event.html?event=${event.ref_id}">See Details</a>
                             </div>
                         </div>
                     </div>`;
-
                 // on click on new div redirect to event page
                 newDiv.onclick = function () {
                     window.location.href = "/events/past/event.html?event=" + event.ref_id;
                 };
-
-
                 // Append the new div to the container
                 past_events.appendChild(newDiv);
             });
         }
-
     }
-
     document.getElementById("nav-events").classList.add("active");
-
     window.onload = async () => {
         await getActiveEvents();
         await getPastEvents();
         offLoading();
     };
 </script>
-
-
-
 <!-- include footer -->
 {% include footer.html %}

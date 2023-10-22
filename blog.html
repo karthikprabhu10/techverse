@@ -1,10 +1,9 @@
 ---
 layout: default
+description: Techverse is a technical club in Pune. We are a group of tech enthusiasts who are passionate about technology and its applications.
 title: Blog | Techverse
 ---
-
 <head>
-
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -13,13 +12,11 @@ title: Blog | Techverse
             -moz-user-select: none;
             user-select: none;
         }
-
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
         }
-
         .b-example-divider {
             width: 100%;
             height: 3rem;
@@ -28,25 +25,21 @@ title: Blog | Techverse
             border-width: 1px 0;
             box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
         }
-
         .b-example-vr {
             flex-shrink: 0;
             width: 1.5rem;
             height: 100vh;
         }
-
         .bi {
             vertical-align: -.125em;
             fill: currentColor;
         }
-
         .nav-scroller {
             position: relative;
             z-index: 2;
             height: 2.75rem;
             overflow-y: hidden;
         }
-
         .nav-scroller .nav {
             display: flex;
             flex-wrap: nowrap;
@@ -57,11 +50,9 @@ title: Blog | Techverse
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
-
         .btn-bd-primary {
             --bd-violet-bg: #f3bd00;
             --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
             --bs-btn-font-weight: 600;
             --bs-btn-color: var(--bs-white);
             --bs-btn-bg: var(--bd-violet-bg);
@@ -74,26 +65,20 @@ title: Blog | Techverse
             --bs-btn-active-bg: #c4a021;
             --bs-btn-active-border-color: #c4a021;
         }
-
         .bd-mode-toggle {
             z-index: 1500;
         }
-
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
         }
     </style>
-
-
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
 </head>
-
 <!-- include header -->
 {% include navbar.html %}
-
 <!-- content  -->
 <!-- Page Header Start -->
 <div class="container-fluid page-header-blogs py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
@@ -109,16 +94,12 @@ title: Blog | Techverse
     </div>
 </div>
 <!-- Page Header End -->
-
-
 <main class="container">
-
     <div class="row g-5">
         <div class="col-md-8">
             <h3 class="pb-4 mb-4 fst-italic border-bottom">
                 <span id="main_domain">
                 </span>
-
             </h3>
             <h2 class="display-5 link-body-emphasis mb-1" id="main_blog_title"><span class="loading-skeleton"> Loading
                     blog title </span></h2>
@@ -131,20 +112,17 @@ title: Blog | Techverse
                 Likes
             </p>
             <hr>
-
             <div class="ck ck-content" id="main_blog_content">
                 <div style="width: 100%; height: 500px;">
                     <span class="loading-skeleton"></span>
                 </div>
             </div>
-
             <div class="text-center py-4">
                 <div class="custom-pagination">
                     <a class="btn btn-primary" id="like_blog_btn"><i class="fa fa-heart"></i> Like Blog</a>
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="position-sticky" style="top: 2rem;">
                 <div class="p-4 mb-3 bg-body-tertiary rounded">
@@ -155,11 +133,9 @@ title: Blog | Techverse
                         </span>    
                     </p>
                 </div>
-
                 <div>
                     <h4 class="fst-italic">Recent posts</h4>
                     <ul class="list-unstyled" id="list_of_recent_posts">
-
                         <li>
                             <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
                                 href="#">
@@ -188,11 +164,8 @@ title: Blog | Techverse
                                 </div>
                             </a>
                         </li>
-
                     </ul>
                 </div>
-
-
                 <div class="p-4">
                     <h4 class="fst-italic">Domains</h4>
                     <ol class="list-unstyled" id="domain_links">
@@ -207,7 +180,6 @@ title: Blog | Techverse
             </div>
         </div>
     </div>
-
     <!-- longer featured -->
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" id="long_featured">
         <div class="col-lg-6 px-0">
@@ -218,7 +190,6 @@ title: Blog | Techverse
                     reading...</a></p>
         </div>
     </div>
-
     <!-- related posts -->
     <div class="row mb-2" id="related_posts">
         <div class="col-md-6">
@@ -273,31 +244,20 @@ title: Blog | Techverse
                 </div>
             </div>
         </div>
-
     </div>
-
-
 </main>
-
-
 <!-- JS -->
 <script type="module">
     import { backend_url, setLoading, offLoading } from '/js/script.js';
-
     document.getElementById("nav-blogs").classList.add("active");
-
     var searchParams = new URLSearchParams(window.location.search);
     var blog_ref_id = searchParams.get('blog');
-
     if (blog_ref_id == null) {
         window.location.href = "/blogs.html";
     }
-
     var domain_list;
-
     async function setBlogDetails() {
         var url = backend_url + "/api/blog/" + blog_ref_id;
-
         var response = await fetch(url).then(res => {
             if (res.ok) {
                 return res;
@@ -306,10 +266,8 @@ title: Blog | Techverse
             }
         });
         var data = await response.json();
-
         var date = new Date(data.blog_date_time);
         date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
-
         document.getElementById("breadcrumb_blog_title").innerHTML = data.title;
         document.getElementById("main_domain").innerHTML = domain_list[data.domain];
         document.getElementById("main_blog_title").innerHTML = data.title;
@@ -320,10 +278,8 @@ title: Blog | Techverse
         document.getElementById("main_blog_content").innerHTML = data.content;
         document.getElementById("main_about_blog").innerHTML = data.description;
     }
-
     async function setDomains() {
         domain_list = await fetch(backend_url + "/api/blog_domains").then(res => res.json());
-
         var domain_links = document.getElementById("domain_links");
         domain_links.innerHTML = "";
         for (const [key, value] of Object.entries(domain_list)) {
@@ -332,18 +288,14 @@ title: Blog | Techverse
             domain_links.appendChild(item);
         }
     }
-
     async function getFeaturedBlogs() {
         var url = backend_url + "/api/featured_blogs";
-
         var response = await fetch(url);
         var data = await response.json();
-
         var long_featured_blog = document.getElementById("long_featured");
         var featured_blogs = document.getElementById("related_posts");
         long_featured_blog.innerHTML = "";
         featured_blogs.innerHTML = "";
-
         if (data.length == 0) {
             long_featured_blog.innerHTML = "<h1 class='text-center'>No Featured Blogs</h1>";
             featured_blogs.remove();
@@ -352,10 +304,8 @@ title: Blog | Techverse
             var blog = data[0];
             var date = new Date(blog.blog_date_time);
             date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
-
             long_featured_blog.style = `    background: linear-gradient(rgb(255 255 255 / 75%), rgb(255 255 255 / 75%)), url('${backend_url + blog.blog_poster}') center center no-repeat;
     background-size: cover;`;
-
             long_featured_blog.innerHTML = `
             <div class="col-lg-6 px-0">
                 <h1 class="display-4 fst-italic">${blog.title}</h1>
@@ -365,23 +315,17 @@ title: Blog | Techverse
             </div>
             `;
         }
-
         data = data.slice(1);
-
         if (data.length == 0) {
             featured_blogs.remove();
             return;
         } else {
-
             data.forEach(function (blog) {
                 // Create a new div
-
                 var newDiv = document.createElement('div');
                 newDiv.className = 'col-md-6';
-
                 var date = new Date(blog.blog_date_time);
                 date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
-
                 // Add the HTML with the event data
                 newDiv.innerHTML = `
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -406,19 +350,13 @@ title: Blog | Techverse
                 featured_blogs.appendChild(newDiv);
             });
         }
-
     }
-
     async function getRecentBlogs() {
         var url = backend_url + "/api/recent_blogs";
-
         var response = await fetch(url);
         var data = await response.json();
-
-
         var recent_blogs = document.getElementById("list_of_recent_posts");
         recent_blogs.innerHTML = "";
-
         if (data.length == 0) {
             recent_blogs.innerHTML = "<h1 class='text-center'>No Recent Blogs</h1>";
             return;
@@ -427,10 +365,8 @@ title: Blog | Techverse
                 var item = document.createElement('li');
                 item.className = 'd-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top';
                 item.dataset.wowDelay = '0.1s';
-
                 var date = new Date(blog.blog_date_time);
                 date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
-
                 // Add the HTML with the event data
                 item.innerHTML = `
                 <img class="bd-placeholder-img" width="100%" height="96" src="${backend_url + blog.blog_poster}" />
@@ -441,14 +377,11 @@ title: Blog | Techverse
                                     <small class="text-body-secondary">${date}</small>
                                 </div>
                 `;
-
                 // Append the new div to the container
                 recent_blogs.appendChild(item);
             });
         }
-
     }
-
     document.getElementById("like_blog_btn").addEventListener('click', async () => {
         var url = backend_url + "/api/like_blog/" + blog_ref_id;
         // send post request
@@ -465,7 +398,6 @@ title: Blog | Techverse
             }
         });
     });
-
     window.onload = async () => {
         offLoading();
         await setDomains();
@@ -473,9 +405,6 @@ title: Blog | Techverse
         await getRecentBlogs();
         await getFeaturedBlogs();
     };
-
-
 </script>
-
 <!-- include footer -->
 {% include footer.html %}
