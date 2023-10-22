@@ -1,11 +1,10 @@
 ---
 layout: default
+description: Techverse is a technical club in Pune. We are a group of tech enthusiasts who are passionate about technology and its applications.
 title: Event Details | Techverse
 ---
-
 <!-- include header -->
 {% include navbar.html %}
-
 <link rel="stylesheet" href="/css/ckstyle.css">
 <script src="/js/bundle.js"></script>
 <!-- content  -->
@@ -23,8 +22,6 @@ title: Event Details | Techverse
     </div>
 </div>
 <!-- Page Header End -->
-
-
 <!-- Features Start -->
 <div class="container-xxl py-6">
     <div class="container">
@@ -44,21 +41,17 @@ title: Event Details | Techverse
                 <p id="event_desc" class="mb-1"><span class="loading-skeleton">Loading Description</span> </p>
                 <div class="row gy-5 gx-4 m-0">
                     <div class="col-sm-6 wow fadeIn mb-0 mt-2" data-wow-delay="0.1s">
-
                         <span id="event_datetime"><span class="loading-skeleton">6th Oct 2023, 2:30 PM
                                 <br><br></span></span>
                     </div>
                     <div class="col-sm-6 wow fadeIn mb-0 mt-2" data-wow-delay="0.2s">
-
                         <span id="event_venue"><span class="loading-skeleton">Room No 514, MESWCOE
                                 <br><br></span></span>
                     </div>
                     <div class="col-sm-6 wow fadeIn mb-0 mt-2" data-wow-delay="0.3s">
-
                         <span id="event_reg_limit"><span class="loading-skeleton">100 <br><br></span></span>
                     </div>
                     <div class="col-sm-6 wow fadeIn mb-0 mt-2" data-wow-delay="0.4s">
-
                         <span id="event_reg_count"><span class="loading-skeleton">99 <br><br></span></span>
                     </div>
                 </div>
@@ -67,25 +60,21 @@ title: Event Details | Techverse
                 <div class="position-relative overflow-hidden pe-5 pt-5 h-100" style="min-height: 400px;">
                     <img id="event_poster" class="position-absolute w-100 h-100 loading-skeleton"
                         style="object-fit: cover;">
-                    <!-- <img class="position-absolute top-0 end-0 bg-white rounded ps-3 pb-3" src="img/logo.svg" alt="" style="width: 100px; height: 100px"> -->
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Features End -->
-
 <!-- Form Start -->
 <div class="container-xxl courses my-6 p-1">
     <div class="container">
         <div class="row g-4 justify-content-center">
-
             <div class="col-lg-8 my-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div id="form_container" class="bg-primary text-center p-5">
                     <h1 class="mb-4">Register Now</h1>
                     <form id="event_reg_form" method="post">
                         <input type="text" id="event_id" name="event" placeholder="event" value="1" hidden required>
-
                         <div class="row g-3">
                             <div class="col-12">
                                 <div class="form-floating">
@@ -105,7 +94,6 @@ title: Event Details | Techverse
                                 <div class="form-floating">
                                     <!-- <input type="text"id="cname"
                                             placeholder="Child Name"> -->
-
                                     <select id="year" name="year" class="form-select border-0" required
                                         style="padding-top: auto;">
                                         <option value="" disabled selected hidden>Select Year</option>
@@ -133,7 +121,6 @@ title: Event Details | Techverse
                                 <div class="form-floating">
                                     <!-- <input type="text"id="cname"
                                             placeholder="Child Name"> -->
-
                                     <select id="division" name="division" class="form-select border-0" required
                                         style="padding-top: auto;">
                                         <option value="" disabled selected hidden>Select Division</option>
@@ -182,9 +169,6 @@ title: Event Details | Techverse
     </div>
 </div>
 <!-- Form End -->
-
-
-
 <!-- event details -->
 <div class="container-xxl py-6 wow fadeInUp" data-wow-delay="0.1s"
     style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;overflow: hidden;">
@@ -196,28 +180,21 @@ title: Event Details | Techverse
         </div>
     </div>
 </div>
-
-
 <!-- event details end -->
-
-
 <!-- JS -->
 <script type="module">
     import { backend_url, setLoading, offLoading } from '/js/script.js';
-
     function handleNoEvent() {
         console.log("No Active Events Found");
         // redirect to no-active-event.html
         window.location.replace("/events/no-event-found.html");
     }
-
     function handleEventRegSuccess(data) {
         offLoading();
         document.getElementById('form_container').style.display = "none";
         document.getElementById('form_success').style.display = "block";
         document.getElementById('entry_code').innerHTML = data.entry_key;
     }
-
     function handleEventRegError(error) {
         offLoading();
         var elmt = document.getElementById('error_msg');
@@ -231,7 +208,6 @@ title: Event Details | Techverse
             elmt.innerHTML = "Something Went Wrong";
         }
     }
-
     function setEventDetails(event_details) {
         document.getElementById('event_id').value = event_details.ref_id;
         document.getElementById('event_domain').innerHTML = event_details.domain;
@@ -247,7 +223,6 @@ title: Event Details | Techverse
         document.getElementById('event_poster').src = backend_url + event_details.event_poster;
         document.getElementById('event_details').innerHTML = event_details.details;
     }
-
     async function getActiveEvent() {
         try {
             const response = await fetch(backend_url + '/api/earliest_active_event');
@@ -262,7 +237,6 @@ title: Event Details | Techverse
             handleNoEvent();
         }
     }
-
     async function setEvent() {
         var event_id = new URLSearchParams(window.location.search).get('event');
         var event;
@@ -270,7 +244,6 @@ title: Event Details | Techverse
             try {
                 const response = await fetch(backend_url + '/api/event/' + event_id);
                 const data = await response.json();
-
                 if (data.length < 1) {
                     event = await getActiveEvent();
                 } else {
@@ -294,25 +267,21 @@ title: Event Details | Techverse
         }
     }
     document.getElementById("nav-events").classList.add("active");
-
     window.onload = async () => {
         offLoading();
         await setEvent();
     };
-
     document.getElementById('event_reg_form').addEventListener('submit', function (e) {
         setLoading("Registering For Event");
         e.preventDefault();
         var url = backend_url + "/api/register_for_event";
         var data = new FormData(e.target);
-
         fetch(url, { method: 'POST', body: data })
             .then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
             .then(data => { console.log('Entry Key:', data.entry_key); handleEventRegSuccess(data); })
             .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
         offLoading();
     });
-
 </script>
 <!-- include footer -->
 {% include footer.html %}

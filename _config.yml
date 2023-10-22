@@ -2,16 +2,13 @@ title: TechVerse
 description: TechVerse is a community of tech enthusiasts who are passionate about technology and want to share their knowledge with the world.
 author: TechVerse
 email: techverse.mescoe@gmail.com
-
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
 include:
   - ".well-known"
-
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -26,4 +23,3 @@ exclude:
   - README.md
   - extra-pages/
   - With-JK/
-

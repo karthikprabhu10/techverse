@@ -1,8 +1,8 @@
 ---
 layout: default
+description: Techverse is a technical club in Pune. We are a group of tech enthusiasts who are passionate about technology and its applications.
 title: Blogs | Techverse
 ---
-
 <head>
     <style>
         .title_link {
@@ -10,10 +10,8 @@ title: Blogs | Techverse
         }
     </style>
 </head>
-
 <!-- include header -->
 {% include navbar.html %}
-
 <!-- content  -->
 <!-- Page Header Start -->
 <div class="container-fluid page-header-blogs py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
@@ -29,17 +27,13 @@ title: Blogs | Techverse
     </div>
 </div>
 <!-- Page Header End -->
-
-
 <main id="main">
-
     <!-- ======= Search Results ======= -->
     <section id="search-result" class="search-result">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
                     <h3 class="category-title">Our Blogs</h3>
-
                     <div class="m-3">
                         <select class="form-select" id="sort_by_select" aria-label="Default select">
                             <option selected hidden disabled>Sort By</option>
@@ -48,9 +42,7 @@ title: Blogs | Techverse
                             <option value="views">Sort By Views</option>
                             <option value="likes">Sort By Likes</option>
                         </select>
-
                     </div>
-
                     <div id="blog_list">
                         <div class="post-meta mb-2">
                             <span class="loading-skeleton">
@@ -62,9 +54,7 @@ title: Blogs | Techverse
                                 <br>
                             </span>
                         </div>
-
                         <div class="d-md-flex post-entry-2 small-img">
-
                             <a href="/blog.html?blog=${blog.ref_id}" class="me-4 thumbnail"
                                 style="width: 40%;height: auto;">
                                 <span class="loading-skeleton">
@@ -74,10 +64,8 @@ title: Blogs | Techverse
                                 <h3><a href="/blog.html?blog=${blog.ref_id}" class="title_link"><span
                                             class="loading-skeleton"> Loading Title</span></a></h3>
                                 <p><span class="loading-skeleton"> Loading Description </span></p>
-
                                 <a class="btn btn-primary py-2 px-3 m-2" href="#">View Blog</a>
                             </div>
-
                         </div>
                         <hr>
                         <div class="post-meta mb-2">
@@ -90,9 +78,7 @@ title: Blogs | Techverse
                                 <br>
                             </span>
                         </div>
-
                         <div class="d-md-flex post-entry-2 small-img">
-
                             <a href="/blog.html?blog=${blog.ref_id}" class="me-4 thumbnail"
                                 style="width: 40%;height: auto;">
                                 <span class="loading-skeleton">
@@ -102,10 +88,8 @@ title: Blogs | Techverse
                                 <h3><a href="/blog.html?blog=${blog.ref_id}" class="title_link"><span
                                             class="loading-skeleton"> Loading Title</span></a></h3>
                                 <p><span class="loading-skeleton"> Loading Description </span></p>
-
                                 <a class="btn btn-primary py-2 px-3 m-2" href="#">View Blog</a>
                             </div>
-
                         </div>
                         <hr>
                         <div class="post-meta mb-2">
@@ -118,9 +102,7 @@ title: Blogs | Techverse
                                 <br>
                             </span>
                         </div>
-
                         <div class="d-md-flex post-entry-2 small-img">
-
                             <a href="/blog.html?blog=${blog.ref_id}" class="me-4 thumbnail"
                                 style="width: 40%;height: auto;">
                                 <span class="loading-skeleton">
@@ -130,43 +112,34 @@ title: Blogs | Techverse
                                 <h3><a href="/blog.html?blog=${blog.ref_id}" class="title_link"><span
                                             class="loading-skeleton"> Loading Title</span></a></h3>
                                 <p><span class="loading-skeleton"> Loading Description </span></p>
-
                                 <a class="btn btn-primary py-2 px-3 m-2" href="#">View Blog</a>
                             </div>
-
                         </div>
                     </div>
-
-
                     <!-- Paging -->
                     <div class="text-center py-4">
                         <div class="custom-pagination">
                             <a class="btn btn-primary" id="load_more_btn">Load More</a>
                         </div>
                     </div><!-- End Paging -->
-
                 </div>
                 <div class="col-md-3">
                     <div>
                         <!-- ======= Sidebar ======= -->
                         <div class="aside-block">
-
                             <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="pills-featured-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-featured" type="button" role="tab"
                                         aria-controls="pills-featured" aria-selected="true">Featured</button>
                                 </li>
-
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-latest" type="button" role="tab"
                                         aria-controls="pills-latest" aria-selected="false">Latest</button>
                                 </li>
                             </ul>
-
                             <div class="tab-content" id="pills-tabContent">
-
                                 <!-- Popular -->
                                 <div class="tab-pane fade show active" id="pills-featured" role="tabpanel"
                                     aria-labelledby="pills-featured-tab">
@@ -188,9 +161,7 @@ title: Blogs | Techverse
                                                     Loading <br><br></span></a></h2>
                                         <!-- <span class="author mb-3 d-block">Techverse</span> -->
                                     </div>
-
                                 </div> <!-- End Popular -->
-
                                 <!-- Latest -->
                                 <div class="tab-pane fade" id="pills-latest" role="tabpanel"
                                     aria-labelledby="pills-latest-tab">
@@ -212,16 +183,10 @@ title: Blogs | Techverse
                                                     Loading <br><br></span></a></h2>
                                         <!-- <span class="author mb-3 d-block">Techverse</span> -->
                                     </div>
-
                                 </div>
-
                             </div> <!-- End Latest -->
-
                         </div>
                     </div>
-
-
-
                     <div class="aside-block my-2">
                         <h3 class="aside-title">Domains</h3>
                         <ul class="aside-tags list-unstyled" id="domain_links">
@@ -234,35 +199,24 @@ title: Blogs | Techverse
                                 </a></li>
                         </ul>
                     </div><!-- End Tags -->
-
                 </div>
-
             </div>
         </div>
     </section> <!-- End Search Result -->
-
 </main><!-- End #main -->
-
-
 <!-- JS -->
 <script type="module">
     import { backend_url, setLoading, offLoading } from '/js/script.js';
-
     document.getElementById("nav-blogs").classList.add("active");
-
     var searchParams = new URLSearchParams(window.location.search);
     var domain = searchParams.get('domain');
     domain = domain ? domain : "all";
     // console.log(blog_list_url);
-
     var blog_start = 0;
     var sort_by = "new";
-
     var domain_list;
-
     async function setDomains() {
         domain_list = await fetch(backend_url + "/api/blog_domains").then(res => res.json());
-
         var domain_links = document.getElementById("domain_links");
         domain_links.innerHTML = "";
         for (const [key, value] of Object.entries(domain_list)) {
@@ -271,16 +225,12 @@ title: Blogs | Techverse
             domain_links.appendChild(item);
         }
     }
-
     async function getFeaturedBlogs() {
         var url = backend_url + "/api/featured_blogs";
-
         var response = await fetch(url);
         var data = await response.json();
-
         var featured_blogs = document.getElementById("pills-featured");
         featured_blogs.innerHTML = "";
-
         if (data.length == 0) {
             featured_blogs.innerHTML = "<h1 class='text-center'>No Featured Blogs</h1>";
             return;
@@ -290,10 +240,8 @@ title: Blogs | Techverse
                 var newDiv = document.createElement('div');
                 newDiv.className = 'post-entry-1 border-bottom mb-3';
                 newDiv.dataset.wowDelay = '0.1s';
-
                 var date = new Date(blog.blog_date_time);
                 date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
-
                 // Add the HTML with the event data
                 newDiv.innerHTML = `
                 <div class="post-meta">
@@ -303,24 +251,17 @@ title: Blogs | Techverse
                 <h2 class="mb-2"><a href="/blog.html?blog=${blog.ref_id}" class="title_link">${blog.title}</a></h2>
                 <span class="author d-block">By ${blog.author_name}</span>    
                 <a class="btn btn-primary px-1 py-2 m-1" href="/blog.html?blog=${blog.ref_id}">View Blog</a>`;
-
                 // Append the new div to the container
                 featured_blogs.appendChild(newDiv);
             });
         }
-
     }
-
     async function getRecentBlogs() {
         var url = backend_url + "/api/recent_blogs";
-
         var response = await fetch(url);
         var data = await response.json();
-
-
         var recent_blogs = document.getElementById("pills-latest");
         recent_blogs.innerHTML = "";
-
         if (data.length == 0) {
             recent_blogs.innerHTML = "<h1 class='text-center'>No Recent Blogs</h1>";
             return;
@@ -330,10 +271,8 @@ title: Blogs | Techverse
                 var newDiv = document.createElement('div');
                 newDiv.className = 'post-entry-1 border-bottom mb-3';
                 newDiv.dataset.wowDelay = '0.1s';
-
                 var date = new Date(blog.blog_date_time);
                 date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
-
                 // Add the HTML with the event data
                 newDiv.innerHTML = `
                 <div class="post-meta">
@@ -343,14 +282,11 @@ title: Blogs | Techverse
                 <h2 class="mb-2"><a href="/blog.html?blog=${blog.ref_id}" class="title_link">${blog.title}</a></h2>
                 <span class="author d-block">By ${blog.author_name}</span>    
                 <a class="btn btn-primary px-1 py-2 m-1" href="/blog.html?blog=${blog.ref_id}">View Blog</a>`;
-
                 // Append the new div to the container
                 recent_blogs.appendChild(newDiv);
             });
         }
-
     }
-
     async function getBlogs(sort, start) {
         var url = backend_url + "/api/selected_blogs/" + domain + "/" + sort + "/" + start;
         var response = await fetch(url);
@@ -362,7 +298,6 @@ title: Blogs | Techverse
             document.getElementById("load_more_btn").style.display = "block";
         }
         // return;
-
         var blog_list = document.getElementById("blog_list");
         if (start == 0) {
             // inner html 0
@@ -376,10 +311,8 @@ title: Blogs | Techverse
                 // Create a new div
                 var newDiv = document.createElement('div');
                 newDiv.dataset.wowDelay = '0.1s';
-
                 var date = new Date(blog.blog_date_time);
                 date = date.getDate() + " " + date.toLocaleString('default', { month: 'short' }) + ", " + date.getFullYear();
-
                 // Add the HTML with the event data
                 newDiv.innerHTML = `
                     <div class="post-meta">
@@ -387,46 +320,36 @@ title: Blogs | Techverse
                         <span> ${date} </span><span class="mx-1">&bullet;</span>
                         <span>${blog.blog_views}</span> Views<span class="mx-1">&bullet;</span>
                         <span>${blog.blog_likes}</span> Likes
-
                     </div>
                     <div class="post-meta">
                         Author
                         <span>${blog.author_name}</span>
                     </div>
-
                     <div class="d-md-flex post-entry-2 small-img" >
-
                         <a style="max-width: 40%;" href="/blog.html?blog=${blog.ref_id}" class="me-4 thumbnail">
-                            <img src="${backend_url + blog.blog_poster}" alt="" class="img-fluid">
+                            <img src="${backend_url + blog.blog_poster}" alt="Blog Poster" class="img-fluid">
                         </a>
                         <div style="max-width: 60%;">
                             <h3><a href="/blog.html?blog=${blog.ref_id}" class="title_link">${blog.title}</a></h3>
                             <p>${blog.description}</p>
-
                             <a class="btn btn-primary py-2 px-3 m-2" href="/blog.html?blog=${blog.ref_id}">View Blog</a>
                         </div>
-
                     </div>
                     <hr>
                 `;
-
                 // Append the new div to the container
                 blog_list.appendChild(newDiv);
             });
         }
         offLoading();
-
     }
-
     function SetBlogs() {
         getBlogs(sort_by, blog_start);
     }
-
     document.getElementById("load_more_btn").addEventListener("click", (e) => {
         blog_start += 0;
         getBlogs(sort_by, blog_start);
     });
-
     document.getElementById("sort_by_select").addEventListener("change", (e) => {
         if (sort_by != e.target.value) {
             sort_by = e.target.value;
@@ -434,9 +357,6 @@ title: Blogs | Techverse
             SetBlogs();
         }
     });
-
-
-
     window.onload = async () => {
         // setLoading("Loading Blogs");
         offLoading();
@@ -445,8 +365,6 @@ title: Blogs | Techverse
         await setDomains();
         await getRecentBlogs();
     };
-
 </script>
-
 <!-- include footer -->
 {% include footer.html %}

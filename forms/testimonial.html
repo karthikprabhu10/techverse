@@ -1,12 +1,10 @@
 ---
 layout: default
+description: Techverse is a technical club in Pune. We are a group of tech enthusiasts who are passionate about technology and its applications.
 title: Testimonials | Techverse
 ---
-
 <!-- include header -->
 {% include navbar.html %}
-
-
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center">
@@ -21,13 +19,11 @@ title: Testimonials | Techverse
     </div>
 </div>
 <!-- Page Header End -->
-
 <!-- testimonial form -->
 <!-- Form Start -->
 <div class="container-xxl courses my-6 p-1" id="testimonialForm">
     <div class="container">
         <div class="row g-4 justify-content-center">
-
             <div class="col-lg-8 my-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div id="form_container" class="bg-primary text-center p-5">
                     <h1 class="mb-2">Give Us Your Feedback</h1>
@@ -63,7 +59,6 @@ title: Testimonials | Techverse
                                     <label for="review">Your Review</label>
                                 </div>
                             </div>
-
                             <div class="col-sm-12">
                                 <div class="form">
                                     <label for="formFile" class="form-label text-start text-white">Upload Your Profile
@@ -90,7 +85,6 @@ title: Testimonials | Techverse
                                         will let you know the status of your publication after our review.</p>
                                     <p class="mb-4 text-white">We will never share your contact Details such as Email.
                                     </p>
-
                                     <a class="btn btn-primary py-3 px-5" href="/">Go Back To Home</a>
                                 </div>
                             </div>
@@ -102,19 +96,14 @@ title: Testimonials | Techverse
     </div>
 </div>
 <!-- Form End -->
-
-
-
 <!-- JS -->
 <script type="module">
     import { backend_url, setLoading, offLoading } from '/js/script.js';
-
     function handleEventRegSuccess(data) {
         offLoading();
         document.getElementById('form_container').style.display = "none";
         document.getElementById('form_success').style.display = "block";
     }
-
     function handleEventRegError(error) {
         offLoading();
         if (error.status_code == 400) {
@@ -128,25 +117,20 @@ title: Testimonials | Techverse
             return;
         }
     }
-
     window.onload = function () {
         offLoading();
     }
-
     document.getElementById('testimonial_form').addEventListener('submit', function (e) {
         setLoading("Submitting Form");
         e.preventDefault();
         var url = backend_url + "/api/submit_testimonial";
         var data = new FormData(e.target);
-
         fetch(url, { method: 'POST', body: data })
             .then(response => response.ok ? response.json() : response.json().then(error => { throw error; }))
             .then(data => { handleEventRegSuccess(data); })
             .catch((error) => { console.error('Error:', error); console.error('data:', data); handleEventRegError(error); });
         // offLoading();
     });
-
 </script>
-
 <!-- include footer -->
 {% include footer.html %}

@@ -1,13 +1,10 @@
 ---
 layout: default
+description: Techverse is a technical club in Pune. We are a group of tech enthusiasts who are passionate about technology and its applications.
 title: Home | Techverse
 ---
-
 <!-- include header -->
 {% include navbar.html %}
-
-
-
 <!-- Carousel Start -->
 <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -56,8 +53,6 @@ title: Home | Techverse
     </div>
 </div>
 <!-- Carousel End -->
-
-
 <!-- Facts Start -->
 <div class="container-fluid facts py-5 pt-lg-0">
     <div class="container py-5 pt-lg-0">
@@ -105,8 +100,6 @@ title: Home | Techverse
     </div>
 </div>
 <!-- Facts End -->
-
-
 <!-- About Start -->
 <div class="container-xxl py-6">
     <div class="container">
@@ -115,8 +108,8 @@ title: Home | Techverse
                 <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px;">
                     <img class="position-absolute w-100 h-100"
                         src="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1598245577/1598245576.jpg"
-                        alt="" style="object-fit: contain; align-items: center; display: flex;">
-                    <!-- <img class="position-absolute top-0 start-0 bg-white pe-3 pb-3" src="img/TechVerse Logo Vertical.png" alt="" style="width: 300px; height: 300px;"> -->
+                        alt="Background Image" style="object-fit: contain; align-items: center; display: flex;">
+                    <!-- <img class="position-absolute top-0 start-0 bg-white pe-3 pb-3" src="img/TechVerse Logo Vertical.png" alt="logo" style="width: 300px; height: 300px;"> -->
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -165,10 +158,6 @@ title: Home | Techverse
     </div>
 </div>
 <!-- About End -->
-
-
-
-
 <!-- Features Start -->
 <div class="container-xxl py-6">
     <div class="container">
@@ -227,27 +216,21 @@ title: Home | Techverse
                 <div class="position-relative overflow-hidden pe-5 pt-5 h-100" style="min-height: 400px;">
                     <img class="position-absolute w-100 h-100"
                         src="https://img.freepik.com/free-vector/positive-tiny-people-sitting-walking-near-huge-target-with-arrow-isolated-flat-vector-illustration-cartoon-business-team-achieving-goal-aim-marketing-strategy-achievement-concept_74855-10139.jpg?w=826&t=st=1696178328~exp=1696178928~hmac=c1d5bae36985029abd7d554a58239eb516486afc49f4911c4e5353c10503e0ce"
-                        alt="" style="object-fit:contain; ">
-                    <!-- <img class="position-absolute top-0 end-0 bg-white ps-3 pb-3" src="https://img.freepik.com/free-photo/team-together-creating-word-goals_1134-318.jpg?size=626&ext=jpg&ga=GA1.1.609675138.1696176783&semt=sph" alt="" style="width: 100px; height: 100px"> -->
-                </div>
+                        alt="Background Image" style="object-fit:contain; ">
+                    </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Features End -->
-
 <!-- JS -->
 <script type="module">
     import { backend_url, setLoading, offLoading } from '/js/script.js';
-
     document.getElementById("nav-home").classList.add("active");
-
     window.onload = async () => {
         // await setEvent(); 
         offLoading();
     };
-
 </script>
-
 <!-- include footer -->
 {% include footer.html %}

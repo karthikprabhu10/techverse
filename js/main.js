@@ -1,6 +1,5 @@
 (function ($) {
     "use strict";
-
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -14,8 +13,6 @@
     
     // Initiate the wowjs
     new WOW().init();
-
-
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -38,8 +35,6 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
-
-
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
@@ -48,7 +43,5 @@
         dots: true,
         loop: true,
     });
-
     
 })(jQuery);
-
